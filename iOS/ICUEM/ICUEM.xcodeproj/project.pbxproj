@@ -15,7 +15,6 @@
 		4947EA991A9069820092557B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4947EA971A9069820092557B /* LaunchScreen.xib */; };
 		4947EAA51A9069820092557B /* ICUEMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947EAA41A9069820092557B /* ICUEMTests.swift */; };
 		4947EAD61A90704B0092557B /* IMLevelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947EAD51A90704B0092557B /* IMLevelControl.swift */; };
-		4947EAD81A911E430092557B /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4947EAD71A911E430092557B /* map.png */; };
 		4947EADA1A911FDC0092557B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4947EAD91A911FDC0092557B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		4947EAC51A9069C10092557B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4947EAC61A9069C10092557B /* IMKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKitTests.swift; sourceTree = "<group>"; };
 		4947EAD51A90704B0092557B /* IMLevelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLevelControl.swift; sourceTree = "<group>"; };
-		4947EAD71A911E430092557B /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		4947EAD91A911FDC0092557B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				4947EAD91A911FDC0092557B /* MapKit.framework */,
-				4947EAD71A911E430092557B /* map.png */,
 				4947EA881A9069820092557B /* ICUEM */,
 				4947EAA11A9069820092557B /* ICUEMTests */,
 				4947EAC31A9069C10092557B /* IMKitTests */,
@@ -247,7 +244,6 @@
 				4947EA941A9069820092557B /* Main.storyboard in Resources */,
 				4947EA991A9069820092557B /* LaunchScreen.xib in Resources */,
 				4947EA961A9069820092557B /* Images.xcassets in Resources */,
-				4947EAD81A911E430092557B /* map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
