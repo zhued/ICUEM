@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0VD-0e-zMi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,11 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-rp-yJd">
-                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
-                            </mapView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-9Z-gnL" customClass="IMLevelControl" customModule="ICUEM" customModuleProvider="target">
-                                <rect key="frame" x="543" y="30" width="41" height="540"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-9Z-gnL" customClass="IMLevelControl" customModule="ICUEM" customModuleProvider="target">
+                                <rect key="frame" x="543" y="74" width="41" height="452"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="oLb-rw-tS8"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="550" id="wzX-mv-JW1"/>
@@ -32,10 +29,27 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-rp-yJd">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pEb-BQ-IKP" appends="YES" id="iqY-dH-XAB"/>
+                                </connections>
+                            </mapView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb8-OT-yNL">
+                                <rect key="frame" x="523" y="550" width="61" height="30"/>
+                                <state key="normal" title="Get Rect">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="printRect" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fu-iP-wso"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="9Rv-rp-yJd" secondAttribute="centerY" constant="0.5" id="9Ux-kc-eNJ"/>
+                            <constraint firstItem="yb8-OT-yNL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CLd-39-bOi"/>
                             <constraint firstItem="doO-9Z-gnL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DAh-Of-hdB"/>
                             <constraint firstAttribute="centerY" secondItem="doO-9Z-gnL" secondAttribute="centerY" id="E5A-7U-XbM"/>
                             <constraint firstAttribute="centerX" secondItem="9Rv-rp-yJd" secondAttribute="centerX" id="Qd7-1m-qew"/>
@@ -44,6 +58,7 @@
                             <constraint firstItem="doO-9Z-gnL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="999" constant="10" id="WPx-eF-Lhv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="doO-9Z-gnL" secondAttribute="bottom" priority="998" constant="10" id="Yw2-vz-Be1"/>
                             <constraint firstItem="9Rv-rp-yJd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uCP-3H-Qlr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yb8-OT-yNL" secondAttribute="bottom" constant="20" id="zJP-4E-dom"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -51,10 +66,35 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="78z-hz-NgK"/>
+                    <connections>
+                        <outlet property="mapView" destination="9Rv-rp-yJd" id="AKU-ox-vFE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pEb-BQ-IKP">
+                    <connections>
+                        <action selector="mapViewInteraction:" destination="BYZ-38-t0r" id="AG3-yZ-cB8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="677" y="177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wTE-QW-uf5">
+            <objects>
+                <navigationController id="0VD-0e-zMi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Adm-Xd-x5B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pfm-Gf-xKc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsO-iG-nUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="177"/>
         </scene>
     </scenes>
 </document>
