@@ -1,4 +1,7 @@
 var db        = require('./mongo.js');
+var data_room = require('../data_room.json')
+var data_class_event = require('../data_class_event.json')
+
 var Room = db.roominit();
 var Class_Event = db.classeventinit();
 var User = db.userinit();
@@ -44,5 +47,30 @@ module.exports = function(app){
     });
   });
 
+
+
+
+// ***
+// Populate ROOM data from data_room.json
+// ***
+  app.get('/room/add', function(req, res){
+    for(var i = 0; i < data_room.length; i++){
+      new Room(data_room[i]).save();
+    }
+    res.status(200).send("Database ROOM successfully added from data_room.json.");
+  });
+
+// ***
+// Clear database and populate data from mockdata.json
+// ***
+  app.get('/room/reset', function(req, res){
+    Room.remove({}, function(err){
+      if (err) res.send(err);
+       for(var i = 0; i < data_room.length; i++){
+          new Room(data_room[i]).save();
+        }
+      res.status(200).send("Database ROOM successfully reset.");
+    });
+  });
 
 };
