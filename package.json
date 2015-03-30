@@ -1,0 +1,27 @@
+{
+  "name": "ICUEM",
+  "version": "0.0.1",
+  "description": "An easier way to navigate the Engineering Center at CU Boulder.",
+  "main": "server/index.js",
+  "author": "Edward Zhu, Steven Tang, Andrew Arnopoulos, Brian Gaydon",
+  "License": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+
+  "dependencies": {
+    "dotenv": "0.5.1",
+    "express": "^4.7.4",
+    "body-parser": "~1.5.2",
+    "mongoose": "~3.8.22",
+    "mocha": "^1.11.0",
+    "chai": "^1.10.0",
+    "mockgoose": "^1.10.7"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon server/index.js"
+  }
+
+}
