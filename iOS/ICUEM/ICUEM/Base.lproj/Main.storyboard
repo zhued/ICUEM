@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0VD-0e-zMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h4r-Vn-fCy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-9Z-gnL" customClass="IMLevelControl" customModule="ICUEM" customModuleProvider="target">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-rp-yJd">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pEb-BQ-IKP" appends="YES" id="iqY-dH-XAB"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-9Z-gnL" customClass="IMLevelControl" customModule="ICUEM" customModuleProvider="target">
                                 <rect key="frame" x="543" y="74" width="41" height="452"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="oLb-rw-tS8"/>
@@ -29,13 +38,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-rp-yJd">
-                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="pEb-BQ-IKP" appends="YES" id="iqY-dH-XAB"/>
-                                </connections>
-                            </mapView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb8-OT-yNL">
                                 <rect key="frame" x="523" y="550" width="61" height="30"/>
                                 <state key="normal" title="Get Rect">
@@ -81,6 +83,140 @@
             <point key="canvasLocation" x="677" y="177"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="Wkl-Ni-mz6">
+            <objects>
+                <navigationController id="h4r-Vn-fCy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fE9-FQ-3mF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Cj-Ad-DR1" kind="relationship" relationship="rootViewController" id="YO9-mB-cMP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bq-5X-ugb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="892"/>
+        </scene>
+        <!--Class Search-->
+        <scene sceneID="049-nT-vAo">
+            <objects>
+                <viewController id="9Cj-Ad-DR1" customClass="IMClassSearchViewController" customModule="ICUEM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J4w-tv-aD3"/>
+                        <viewControllerLayoutGuide type="bottom" id="vss-zM-qdv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fJJ-aN-IFg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fJ-jA-62y" userLabel="Container View">
+                                <rect key="frame" x="30" y="240" width="540" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAB-G6-QBa">
+                                        <rect key="frame" x="14" y="0.0" width="513" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Cj-Ad-DR1" id="XzW-Wt-pW3"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Room Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8c-Ym-ivs">
+                                        <rect key="frame" x="14" y="60" width="513" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="9Cj-Ad-DR1" id="N8g-FW-9Cu"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="leading" secondItem="8fJ-jA-62y" secondAttribute="leading" id="2nh-3Y-FPQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="F8c-Ym-ivs" secondAttribute="centerX" id="DXW-nn-BX5"/>
+                                    <constraint firstItem="F8c-Ym-ivs" firstAttribute="height" secondItem="8fJ-jA-62y" secondAttribute="height" multiplier="0.5" id="EYU-YN-xrX"/>
+                                    <constraint firstAttribute="height" constant="120" id="HB3-Ig-IS2"/>
+                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="top" secondItem="8fJ-jA-62y" secondAttribute="top" id="JW2-IG-py6"/>
+                                    <constraint firstAttribute="bottom" secondItem="F8c-Ym-ivs" secondAttribute="bottom" id="KyL-VF-nL3"/>
+                                    <constraint firstAttribute="centerX" secondItem="FAB-G6-QBa" secondAttribute="centerX" id="Ya9-O2-Dy1"/>
+                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="width" secondItem="8fJ-jA-62y" secondAttribute="width" multiplier="0.95" id="cXb-ug-UaJ"/>
+                                    <constraint firstItem="F8c-Ym-ivs" firstAttribute="width" secondItem="8fJ-jA-62y" secondAttribute="width" multiplier="0.95" id="fB6-7v-wni"/>
+                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="height" secondItem="8fJ-jA-62y" secondAttribute="height" multiplier="0.5" id="vdD-OX-C1C"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2nh-3Y-FPQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICUEM" translatesAutoresizingMaskIntoConstraints="NO" id="pje-EQ-671">
+                                <rect key="frame" x="250" y="121" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6lV-Xf-VrV"/>
+                                    <constraint firstAttribute="width" secondItem="pje-EQ-671" secondAttribute="height" multiplier="1:1" id="zKd-6P-tGv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="pje-EQ-671" secondAttribute="centerX" id="PjK-90-c0x"/>
+                            <constraint firstAttribute="centerX" secondItem="8fJ-jA-62y" secondAttribute="centerX" id="ZNV-qf-IlV"/>
+                            <constraint firstAttribute="centerY" secondItem="8fJ-jA-62y" secondAttribute="centerY" constant="0.5" id="aGb-Nw-Meh"/>
+                            <constraint firstItem="8fJ-jA-62y" firstAttribute="top" secondItem="pje-EQ-671" secondAttribute="bottom" constant="19" id="fRF-9j-YzI"/>
+                            <constraint firstItem="8fJ-jA-62y" firstAttribute="width" secondItem="fJJ-aN-IFg" secondAttribute="width" multiplier="0.9" id="lGS-Is-0J9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Class Search" id="Atd-jC-pTz">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="KEm-lr-K4D"/>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="PQD-Mv-Dj7">
+                            <connections>
+                                <action selector="displayRelevantFormInformation" destination="9Cj-Ad-DR1" id="Bui-S0-bGI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="roomNumberField" destination="F8c-Ym-ivs" id="mfO-VP-Udv"/>
+                        <outlet property="sectionField" destination="FAB-G6-QBa" id="ZPr-aO-z65"/>
+                        <segue destination="C5a-gF-onA" kind="show" identifier="ShowResults" id="PAC-12-4bP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYQ-qt-Stn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="892"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="CuZ-aJ-8ck">
+            <objects>
+                <viewController id="C5a-gF-onA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Heg-f7-VKa"/>
+                        <viewControllerLayoutGuide type="bottom" id="vDI-81-SAb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ELb-PA-esZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9hv-sx-SaO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9hv-sx-SaO" secondAttribute="centerX" id="Qvr-4j-Gdn"/>
+                            <constraint firstAttribute="centerY" secondItem="9hv-sx-SaO" secondAttribute="centerY" id="Vsa-t8-cgZ"/>
+                            <constraint firstAttribute="width" secondItem="9hv-sx-SaO" secondAttribute="width" id="mRC-pL-Ga2"/>
+                            <constraint firstAttribute="height" secondItem="9hv-sx-SaO" secondAttribute="height" id="pBk-9h-KLz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="Hlj-Kd-kRi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aav-Ni-TQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="892"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="wTE-QW-uf5">
             <objects>
                 <navigationController id="0VD-0e-zMi" sceneMemberID="viewController">
@@ -97,4 +233,7 @@
             <point key="canvasLocation" x="36" y="177"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ICUEM" width="144" height="144"/>
+    </resources>
 </document>
