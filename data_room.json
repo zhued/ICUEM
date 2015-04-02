@@ -1,8 +1,8 @@
 [{"RoomID": "0001", "Wing": "ECCR", "RoomNum": "1B40", "loc": [40,105]},
 {"RoomID": "0002", "Wing": "ECCR", "RoomNum": "1B30", "loc": [40,105]},
-{"RoomID": "0003", "Wing": "ECCR", "RoomNum": "135", "loc": [40,105]}
-{"RoomID": "0004", "Wing": "ECCR", "RoomNum": "1B06", "loc": [40,105]}
-{"RoomID": "0005", "Wing": "ECCS", "RoomNum": "1B14", "loc": [40,105]}
-{"RoomID": "0006", "Wing": "ECCR", "RoomNum": "1B08", "loc": [40,105]}
-{"RoomID": "0007", "Wing": "ECCR", "RoomNum": "151", "loc": [40,105]}
+{"RoomID": "0003", "Wing": "ECCR", "RoomNum": "135", "loc": [40,105]},
+{"RoomID": "0004", "Wing": "ECCR", "RoomNum": "1B06", "loc": [40,105]},
+{"RoomID": "0005", "Wing": "ECCS", "RoomNum": "1B14", "loc": [40,105]},
+{"RoomID": "0006", "Wing": "ECCR", "RoomNum": "1B08", "loc": [40,105]},
+{"RoomID": "0007", "Wing": "ECCR", "RoomNum": "151", "loc": [40,105]},
 {"RoomID": "0008", "Wing": "ECCR", "RoomNum": "118", "loc": [40,105]}]

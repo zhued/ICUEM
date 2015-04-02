@@ -1,8 +1,8 @@
-[{"RoomID": "0001","ClassID": 50001,"Dept": "CSCI","ClassNum": 3308,"Name": "Software Engineering Tools and Methods"},
-{"RoomID": "0002","ClassID": 50002,"Dept": "CSCI","ClassNum": 1300,"Name": "Intro To Computing"}
-{"RoomID": "0003","ClassID": 50003,"Dept": "CSCI","ClassNum": 4830003,"Name": "Data Engineering"}
-{"RoomID": "0004","ClassID": 50004,"Dept": "CSCI","ClassNum": 4830006,"Name": "History & Future of Computing"}
-{"RoomID": "0005","ClassID": 50005,"Dept": "CSCI","ClassNum": 4830007,"Name": "Scientific Visualization"}
-{"RoomID": "0006","ClassID": 50006,"Dept": "CSCI","ClassNum": 4830009,"Name": "Geospatial Data Analysis"}
-{"RoomID": "0007","ClassID": 50007,"Dept": "CSCI","ClassNum": 4830012,"Name": "Concurrent Programming"}
-{"RoomID": "0008","ClassID": 50008,"Dept": "CSCI","ClassNum": 4830014,"Name": "HPC Performance Analysis"}]
+[{"RoomID": "0001","ClassID": "50001","Dept": "CSCI","ClassNum": "3308","Name": "Software Engineering Tools and Methods"},
+{"RoomID": "0002","ClassID": "50002","Dept": "CSCI","ClassNum": "1300","Name": "Intro To Computing"},
+{"RoomID": "0003","ClassID": "50003","Dept": "CSCI","ClassNum": "4830003","Name": "Data Engineering"},
+{"RoomID": "0004","ClassID": "50004","Dept": "CSCI","ClassNum": "4830006","Name": "History & Future of Computing"},
+{"RoomID": "0005","ClassID": "50005","Dept": "CSCI","ClassNum": "4830007","Name": "Scientific Visualization"},
+{"RoomID": "0006","ClassID": "50006","Dept": "CSCI","ClassNum": "4830009","Name": "Geospatial Data Analysis"},
+{"RoomID": "0007","ClassID": "50007","Dept": "CSCI","ClassNum": "4830012","Name": "Concurrent Programming"},
+{"RoomID": "0008","ClassID": "50008","Dept": "CSCI","ClassNum": "4830014","Name": "HPC Performance Analysis"}]
