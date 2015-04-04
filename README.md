@@ -1,26 +1,74 @@
 # ICUEM
 Interactive CU Engineering Map - CSCI 3308
 
+Vision: An application for people to actually be able to navigate the Engineering Center without too much hassle/confusion.
 
-CSCI 3308 – Project Proposal
-Due 02/05/15
-
-Who: Steven Tang, Edward Zhu, Andrew Arnopoulos, Brian Gaydon
-
-Title: ICUEM (Interactive CU Engineering Map)
-
-Description: To have an Interactive Map of the Engineering Center available on 
-mobile for convenience. We plan on implementing a system to find rooms based on class schedule, room number, CU club locations, and etc. Users will be able to map a route from where they are to the room that they wish to go to. Floor plans and mapping will be available and implemented intuitively. 
-
-Vision Statement: An application for people to actually be able to navigate the Engineering Center without too much hassle/confusion.
+Team Members: Steven Tang, Edward Zhu, Andrew Arnopoulos, Brian Gaydon
 
 Motivation: Even after being students for a few years here, we still don’t know where things are in the EC. It would drastically reduce the time and stress of finding rooms for all occasions.
 
-Risks: GPS system not as reliable as expected. CU not providing blueprints, therefore manual mapping. Not everyone on team has mobile dev experience. Support for multiple platforms may become a hassle. Strategies: Give certain tasks to people who have the viable experience. Find new ways to track a person’s locations, if not, just have a manual pin option, or use WiFi strength. Cross compiling for iOS and Android.
-
-VCS: GitHub
-
-VCS Link: [You are here already...](https://github.com/zhued/ICUEM)
+To use the embedded MongoLab API:
 
 
+####Before you start
 
+Make sure you have a file named '.env' that contains the MongoLab API key and MongoLab DB connection verification.
+
+####Init Server (npm)
+	
+	npm install
+
+	npm start
+
+##To Test!
+
+	npm test
+
+
+##What You Can Do! (More will be added later)
+
+#### Get COUNT of database entries
+	
+	curl http://localhost:3000/room/count
+
+#### Get ALL data & details in database - as JSON
+
+	curl http://localhost:3000/room/all
+
+	curl http://localhost:3000/class/all
+
+#### Get a SINGLE entry of a person
+
+	curl http://localhost:3000/room/get/:id
+	
+	curl http://localhost:3000/class/get/:id
+
+#### ADD a single entry to a database
+
+	curl -X POST http://localhost:3000/room/post?<data-goes_here>
+
+	curl -X POST http://localhost:3000/class/post?<data-goes_here>
+
+#### DELETE single person entry
+	
+	curl -X DELETE http://localhost:3000/room/delete/:RoomID
+
+	curl -X DELETE http://localhost:3000/class/delete/:ClassID
+
+#### RESET database
+
+	curl http://localhost:3000/room/reset
+
+	curl http://localhost:3000/class/reset
+
+#### DROP database
+
+	curl http://localhost:3000/room/drop
+
+	curl http://localhost:3000/class/drop
+
+#### ADD database
+
+	curl http://localhost:3000/room/add
+
+	curl http://localhost:3000/class/add
