@@ -16,6 +16,8 @@
 		4947EAA51A9069820092557B /* ICUEMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947EAA41A9069820092557B /* ICUEMTests.swift */; };
 		4947EAD61A90704B0092557B /* IMLevelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947EAD51A90704B0092557B /* IMLevelControl.swift */; };
 		4947EADA1A911FDC0092557B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4947EAD91A911FDC0092557B /* MapKit.framework */; };
+		49780C051AD4ECA2004166EA /* IMClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */; };
+		49780C071AD4F8E5004166EA /* IMClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49780C061AD4F8E5004166EA /* IMClassViewController.swift */; };
 		49C498481AC50F130036152D /* IMClassSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C498471AC50F130036152D /* IMClassSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		4947EAC61A9069C10092557B /* IMKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKitTests.swift; sourceTree = "<group>"; };
 		4947EAD51A90704B0092557B /* IMLevelControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLevelControl.swift; sourceTree = "<group>"; };
 		4947EAD91A911FDC0092557B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassTableViewController.swift; sourceTree = "<group>"; };
+		49780C061AD4F8E5004166EA /* IMClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassViewController.swift; sourceTree = "<group>"; };
 		49C498471AC50F130036152D /* IMClassSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,8 @@
 				4947EA901A9069820092557B /* ViewController.swift */,
 				4947EAD51A90704B0092557B /* IMLevelControl.swift */,
 				49C498471AC50F130036152D /* IMClassSearchViewController.swift */,
+				49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */,
+				49780C061AD4F8E5004166EA /* IMClassViewController.swift */,
 				4947EA921A9069820092557B /* Main.storyboard */,
 				4947EA951A9069820092557B /* Images.xcassets */,
 				4947EA971A9069820092557B /* LaunchScreen.xib */,
@@ -264,11 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49780C051AD4ECA2004166EA /* IMClassTableViewController.swift in Sources */,
 				4947EA911A9069820092557B /* ViewController.swift in Sources */,
 				4947EA8C1A9069820092557B /* AppDelegate.swift in Sources */,
 				4947EAD61A90704B0092557B /* IMLevelControl.swift in Sources */,
 				4947EA8F1A9069820092557B /* ICUEM.xcdatamodeld in Sources */,
 				49C498481AC50F130036152D /* IMClassSearchViewController.swift in Sources */,
+				49780C071AD4F8E5004166EA /* IMClassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
