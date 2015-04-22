@@ -1,3 +1,6 @@
+// Testing connections with the MongoLab
+// ---------------
+// Requires lots of testing modules for MongoDB
 var request = require('supertest'),
     chai = require('chai'),
     express = require('express'),
@@ -6,7 +9,7 @@ var request = require('supertest'),
     data_room = require('../data_room.json')
     mongoose = require('mongoose');
 
-
+// Chai module init into variables
     var expect = chai.expect,
         should = chai.should();
 
@@ -16,7 +19,9 @@ var request = require('supertest'),
 
     var Room = mongoose.model('ROOM'); // this is counting as a test, very good
 
-
+// Tests below
+// ---------------
+// Most code is self explanatory
     describe('POST single class', function(){
       it('responds with a single class object in JSON', function(done){
         request(app).post('/class/post?RoomID=0001&ClassID=50009&Dept=CSCI&ClassNum=4308&Name=SeniorProjects')
