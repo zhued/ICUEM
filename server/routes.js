@@ -1,24 +1,28 @@
+// All Endpoints for hitting the database
+// ---------------
+// Requires database inits from mongo.js and all json data files
 var db        = require('./mongo.js');
 var data_room = require('../data_room.json')
 var data_class_event = require('../data_class_event.json')
-
+// Imports mongo.js DB schemas to manipulate
 var Room = db.roominit();
 var Class_Event = db.classeventinit();
 var User = db.userinit();
 
 module.exports = function(app){
-// ***
-// Returns COUNT of each collection
-// ***
+// Returns COUNT of collection room and class-event
   app.get('/room/count', function(req,res){
     Room.count(function(err,count){
       res.status(200).send(count.toString())
     });
   });
+  app.get('/class/count', function(req,res){
+    Class_Event.count(function(err,count){
+      res.status(200).send(count.toString())
+    });
+  });
 
-// *************************************************************
-//               GET SINGLE - RETURN SINGLE FIELD
-// *************************************************************
+// GET SINGLE - returns a single room details based on query of RoomID
   app.get('/room/get/:id', function(req,res){
     Room.find({RoomID:req.params.id}).find(function(err,doc){
       if(err) res.send(err);
@@ -33,9 +37,7 @@ module.exports = function(app){
     });
   });
 
-// *************************************************************
-//               ALL - OUTPUT EVERYTHING
-// *************************************************************
+// GET ALL - outputs everything in the certain collection
   app.get('/room/all', function(req,res){
     Room.find(function(err,doc){
       if(err) res.send(err);
@@ -57,9 +59,7 @@ module.exports = function(app){
     });
   });
 
-// // *************************************************************
-// //             INSERT - POST TO A DATABASE
-// // *************************************************************
+// POST/INSERT - appends a single new document to a database
   app.post('/room/post', function(req,res){
     Room.count(function(err,count){
       Room.create({RoomID:req.query.RoomID,Wing:req.query.Wing,RoomNum:req.query.RoomNum,loc:req.query.loc}, function(err,doc){
@@ -79,9 +79,7 @@ module.exports = function(app){
   });
 
 
-// // *************************************************************
-// //             DELETE - POST TO A DATABASE
-// // *************************************************************
+// DELETE - delete a document in certain database based on the ID given
   app.delete('/room/delete/:id', function(req,res){
     Room.remove( {RoomID:req.params.id}, function(err,Room){
       if(err) res.send(err);
@@ -98,10 +96,7 @@ module.exports = function(app){
 
 
 
-// *************************************************************
-//             DROP - REMOVES ALL IN COLLECTION
-// *************************************************************
-
+// DROP - Removes everything from a certain collection
   app.get('/room/drop', function(req, res) {
     Room.remove({}, function(err){
       if (err) res.send(err);
@@ -117,10 +112,8 @@ module.exports = function(app){
   });
 
 
-// *************************************************************
-//                ADD FROM FILE - POPULATE FROM JSON FILE
-// *************************************************************
-
+// ADD FROM FILE - Reads in the json file data_room.json or data_class_event.json and
+// adds all the info as docs
   app.get('/room/add', function(req, res){
     for(var i = 0; i < data_room.length; i++){
       new Room(data_room[i]).save();
@@ -135,10 +128,7 @@ module.exports = function(app){
     res.status(200).send("Database CLASS successfully added from data_class_event.json.");
   });
 
-// *************************************************************
-//                 RESET - CLEAR THEN POPULATE
-// *************************************************************
-
+// RESET - Clear a collection of all of its documents
   app.get('/room/reset', function(req, res){
     Room.remove({}, function(err){
       if (err) res.send(err);
@@ -158,8 +148,6 @@ module.exports = function(app){
       res.status(200).send("Database CLASS successfully reset.");
     });
   });
-
-
 
 
 };

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="index.html">
+                  index.js
+                </a>
+              
+                
+                <a class="source" href="mongo.html">
+                  mongo.js
+                </a>
+              
+                
+                <a class="source" href="routes.html">
+                  routes.js
+                </a>
+              
+                
+                <a class="source" href="test.html">
+                  test.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>index.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h2 id="main-init-file-for-webframework-">Main init file for webframework.</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Requires express (light-weight web application framework),
+bodyParser (parse info from MongoDB), routes (import given
+enpoints from routes.js file), and http (inits a http webservice)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> express     = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>),
+    bodyParser  = <span class="hljs-built_in">require</span>(<span class="hljs-string">'body-parser'</span>),
+    routes      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./routes'</span>),
+    http        = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Inits an express app onto port 3000</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> app = express();
+    app.set(<span class="hljs-string">'port'</span>, process.env.PORT || <span class="hljs-number">3000</span>);
+    app.set(<span class="hljs-string">'env'</span>, process.env.NODE_ENV || <span class="hljs-string">'development'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Parses through encoded data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    app.use(bodyParser.urlencoded({ extended: <span class="hljs-literal">false</span> }));
+    app.use(bodyParser.json());</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Exports routes.js to utilize our express framework</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    routes(app);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Creates our express server on http (localhost) and outputs
+that it is listening on port 3000</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> server = http.createServer(app);
+
+  server.listen(app.get(<span class="hljs-string">'port'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Listening on port "</span> + app.get(<span class="hljs-string">'port'</span>) + <span class="hljs-string">" in "</span>+ app.get(<span class="hljs-string">'env'</span>) + <span class="hljs-string">" mode"</span>);
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Export this module as app, so mongo.js and routes.js can use this.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports = app;</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
