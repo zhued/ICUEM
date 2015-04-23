@@ -9,26 +9,35 @@
 import UIKit
 
 class IMClassTableViewController: UITableViewController {
+	///Predicate to determine what classes to show.
+	var predicate:(IMClass) -> Bool = {(c) -> Bool in return true} {
+		didSet {
+			filteredClasses = classCoordinator.classes.filter(predicate)
+		}
+	}
+	///Local variable for IMClassCoordinator singleton.
+	let classCoordinator = IMClassCoordinator.defaultCoordinator
+	///Array of classes that are within the domain of the predicate
+	var filteredClasses = IMClassCoordinator.defaultCoordinator.classes {
+		didSet {
+			tableView.reloadData()
+		}
+	}
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
-	let classes = [("Cognitive Science","ECCR 121"),("Concurrent Programming","ECCR 121"),("Algorithms","ECCR 121"),("Digital Logic","ECCR 121"),("Compiler Construction","ECCR 121")]
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return classes.count
+		return filteredClasses.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ClassCell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-		cell.textLabel?.text = classes[indexPath.row].0
-		cell.detailTextLabel?.text = classes[indexPath.row].1
+		cell.textLabel?.text = filteredClasses[indexPath.row].name
+		cell.detailTextLabel?.text = "\(filteredClasses[indexPath.row].room.wing) \(filteredClasses[indexPath.row].room.roomNumber)"
 		
 
         return cell
@@ -36,10 +45,9 @@ class IMClassTableViewController: UITableViewController {
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if let sender = sender as? UITableViewCell {
-			println(sender)
 			let indexPath = tableView.indexPathForCell(sender)!
-			let classModel = classes[indexPath.row]
-			let destinationViewController = segue.destinationViewController as IMClassViewController
+			let classModel = filteredClasses[indexPath.row]
+			let destinationViewController = segue.destinationViewController as! IMClassViewController
 			
 			destinationViewController.classModel = classModel
 		}
