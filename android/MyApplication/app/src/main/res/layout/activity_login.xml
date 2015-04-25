@@ -26,6 +26,7 @@
         android:id="@+id/loginButton"
         android:paddingRight="25dp"
         android:paddingLeft="25dp"
+        android:onClick="loginUser"
         android:layout_marginLeft="54dp"
         android:layout_marginStart="54dp"
         android:layout_alignParentBottom="true"

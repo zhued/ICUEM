@@ -1,3 +1,4 @@
+
 package com.example.asus.myapplication;
 
 import android.content.Intent;
@@ -6,29 +7,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.util.Log;
-import android.widget.TextView;
 
+/**
+ * This Activity will act as the main page of the app, where you can choose to login as user or as guest
+ * @file StartActivity.java
+ * @author Steven Tang
+ */
 
-public class ErrorActivity extends ActionBarActivity {
+public class StartActivity extends ActionBarActivity {
 
-    private static final String TAG = ErrorActivity.class.getSimpleName();
-    private final String EXTRA_MESSAGE = "com.example.asus.myapplication.MESSAGE";
-
+    /**
+     * This constructs an initial activity - the main page of this app
+     * @param savedInstanceState the instance savedInstanceState will initially be null
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_error);
+        // Use activity_login design as the layout for this activity
+        setContentView(R.layout.activity_login);
     }
 
-
-
-    //@Override
-    /*public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_error, menu);
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
-    }*/
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,19 +49,13 @@ public class ErrorActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public void goToHomepage(View view) {
-        Intent intent;
-        String classFrom = getIntent().getStringExtra(EXTRA_MESSAGE);
-        if (classFrom.equalsIgnoreCase("MainActivity")) {
-            intent = new Intent(this, MainActivity.class);
-        }
-        else if (classFrom.equalsIgnoreCase("MainActivity2")){
-            intent = new Intent(this, MainActivity2.class);
-        }
-        else{
-            intent = new Intent(this, MainActivity3.class);
-        }
+    /**
+     * Initiates a new activity once the login as Guest button has been clicked.
+     * @param view Handles screen layouts and interaction with the user
+     */
+    public void loginAsGuest(View view){
+        Intent intent = new Intent(this, SelectLoginTypeActivity.class);
         startActivity(intent);
     }
+
 }

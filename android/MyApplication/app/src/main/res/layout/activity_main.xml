@@ -26,8 +26,8 @@
         android:id="@+id/button"
         android:enabled="true"
         android:onClick="sendMessage"
-        android:layout_marginTop="73dp"
-        android:layout_below="@+id/editText"
+        android:layout_marginBottom="64dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -36,10 +36,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/classroomWing"
         android:id="@+id/wing"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="88dp"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,29 +47,30 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/classroomNum"
         android:id="@+id/textView3"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/wing"
-        android:layout_toLeftOf="@+id/editText"
-        android:layout_toStartOf="@+id/editText" />
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="15"
         android:id="@+id/editText"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/wing"
-        android:layout_toEndOf="@+id/wing" />
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:layout_alignBottom="@+id/wing"
+        android:layout_below="@+id/wing"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/wing"
-        android:layout_toEndOf="@+id/wing" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

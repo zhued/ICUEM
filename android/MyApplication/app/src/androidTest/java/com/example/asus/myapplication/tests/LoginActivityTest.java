@@ -5,18 +5,20 @@ import android.test.ActivityUnitTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.view.ContextThemeWrapper;
 import android.widget.Button;
-import com.example.asus.myapplication.LoginActivity;
+
 import com.example.asus.myapplication.R;
+import com.example.asus.myapplication.StartActivity;
+
 import android.util.Log;
 
 /**
  * Created by Steven on 3/30/2015.
  */
-public class LoginActivityTest extends ActivityUnitTestCase<LoginActivity>{
+public class LoginActivityTest extends ActivityUnitTestCase<StartActivity>{
     private Intent intent;
 
     public LoginActivityTest() {
-        super(LoginActivity.class);
+        super(StartActivity.class);
     }
 
     @Override
@@ -24,7 +26,7 @@ public class LoginActivityTest extends ActivityUnitTestCase<LoginActivity>{
         super.setUp();
         ContextThemeWrapper context = new ContextThemeWrapper(getInstrumentation().getTargetContext(), R.style.AppTheme);
         setActivityContext(context);
-        intent = new Intent(context, LoginActivity.class);
+        intent = new Intent(context, StartActivity.class);
 
     }
 
