@@ -112,53 +112,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fJ-jA-62y" userLabel="Container View">
-                                <rect key="frame" x="30" y="240" width="540" height="120"/>
+                                <rect key="frame" x="30" y="270" width="540" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAB-G6-QBa">
-                                        <rect key="frame" x="14" y="0.0" width="513" height="60"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8c-Ym-ivs">
+                                        <rect key="frame" x="11" y="0.0" width="520" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="9Cj-Ad-DR1" id="XzW-Wt-pW3"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Room Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8c-Ym-ivs">
-                                        <rect key="frame" x="14" y="60" width="513" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="9Cj-Ad-DR1" id="N8g-FW-9Cu"/>
+                                            <outlet property="delegate" destination="9Cj-Ad-DR1" id="dqk-BZ-TZ8"/>
                                         </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="leading" secondItem="8fJ-jA-62y" secondAttribute="leading" id="2nh-3Y-FPQ"/>
-                                    <constraint firstAttribute="centerX" secondItem="F8c-Ym-ivs" secondAttribute="centerX" id="DXW-nn-BX5"/>
-                                    <constraint firstItem="F8c-Ym-ivs" firstAttribute="height" secondItem="8fJ-jA-62y" secondAttribute="height" multiplier="0.5" id="EYU-YN-xrX"/>
-                                    <constraint firstAttribute="height" constant="120" id="HB3-Ig-IS2"/>
-                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="top" secondItem="8fJ-jA-62y" secondAttribute="top" id="JW2-IG-py6"/>
-                                    <constraint firstAttribute="bottom" secondItem="F8c-Ym-ivs" secondAttribute="bottom" id="KyL-VF-nL3"/>
-                                    <constraint firstAttribute="centerX" secondItem="FAB-G6-QBa" secondAttribute="centerX" id="Ya9-O2-Dy1"/>
-                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="width" secondItem="8fJ-jA-62y" secondAttribute="width" multiplier="0.95" id="cXb-ug-UaJ"/>
-                                    <constraint firstItem="F8c-Ym-ivs" firstAttribute="width" secondItem="8fJ-jA-62y" secondAttribute="width" multiplier="0.95" id="fB6-7v-wni"/>
-                                    <constraint firstItem="FAB-G6-QBa" firstAttribute="height" secondItem="8fJ-jA-62y" secondAttribute="height" multiplier="0.5" id="vdD-OX-C1C"/>
+                                    <constraint firstAttribute="height" constant="60" id="HB3-Ig-IS2"/>
+                                    <constraint firstAttribute="height" secondItem="F8c-Ym-ivs" secondAttribute="height" id="PRB-8F-qPX"/>
+                                    <constraint firstAttribute="centerY" secondItem="F8c-Ym-ivs" secondAttribute="centerY" id="RfU-v9-W6b"/>
+                                    <constraint firstAttribute="width" secondItem="F8c-Ym-ivs" secondAttribute="width" constant="20" id="c9R-DY-F6D"/>
+                                    <constraint firstAttribute="centerX" secondItem="F8c-Ym-ivs" secondAttribute="centerX" constant="-0.5" id="rGu-2o-udM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2nh-3Y-FPQ"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICUEM" translatesAutoresizingMaskIntoConstraints="NO" id="pje-EQ-671">
-                                <rect key="frame" x="250" y="121" width="100" height="100"/>
+                                <rect key="frame" x="250" y="151" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6lV-Xf-VrV"/>
                                     <constraint firstAttribute="width" secondItem="pje-EQ-671" secondAttribute="height" multiplier="1:1" id="zKd-6P-tGv"/>
@@ -178,13 +159,12 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="KEm-lr-K4D"/>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="PQD-Mv-Dj7">
                             <connections>
-                                <action selector="displayRelevantFormInformation" destination="9Cj-Ad-DR1" id="Bui-S0-bGI"/>
+                                <action selector="displayRelevantFormInformation" destination="9Cj-Ad-DR1" id="DnR-IU-rc2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="roomNumberField" destination="F8c-Ym-ivs" id="mfO-VP-Udv"/>
-                        <outlet property="sectionField" destination="FAB-G6-QBa" id="ZPr-aO-z65"/>
+                        <outlet property="searchField" destination="F8c-Ym-ivs" id="GvX-dB-Koy"/>
                         <segue destination="rcL-X4-gKN" kind="show" identifier="ShowResults" id="c1U-tm-tgL"/>
                     </connections>
                 </viewController>

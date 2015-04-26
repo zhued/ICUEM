@@ -9,16 +9,11 @@
 import UIKit
 
 class IMClassSearchViewController: UIViewController,UITextFieldDelegate {
-	///UITextField that takes in section for the room
-	@IBOutlet var sectionField:UITextField!
-	///UITextField that takes in room number for the room
-	@IBOutlet var roomNumberField:UITextField!
+	
+	@IBOutlet var searchField:UITextField!
 	
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
-		if textField == sectionField {
-			roomNumberField.becomeFirstResponder()
-			return true
-		} else if textField == roomNumberField {
+		if textField == searchField {
 			displayRelevantFormInformation()
 			return true
 		}
@@ -26,7 +21,7 @@ class IMClassSearchViewController: UIViewController,UITextFieldDelegate {
 	}
 	
 	@IBAction func displayRelevantFormInformation() {
-		if sectionField.text != "" && roomNumberField.text != "" {
+		if searchField.text != "" {
 			performSegueWithIdentifier("ShowResults", sender: nil)
 		} else {
 			UIAlertView(title: "Invalid Query", message: "Both fields must be completed.", delegate: nil, cancelButtonTitle: "OK").show()
@@ -37,7 +32,14 @@ class IMClassSearchViewController: UIViewController,UITextFieldDelegate {
 		if segue.identifier == "ShowResults" {
 			let destinationViewController = segue.destinationViewController as! IMClassTableViewController
 			destinationViewController.predicate = {
-				return ($0.room.wing == self.sectionField.text && $0.room.roomNumber == self.roomNumberField.text) || $0.name == self.sectionField.text
+				if ($0.name.lowercaseString.rangeOfString(self.searchField.text.lowercaseString) != nil) {
+					return true
+				}
+				let components = split(self.searchField.text) {$0 == " "}
+				if components.count >= 2 {
+					return $0.room.wing == components[0] && $0.room.roomNumber == components[1]
+				}
+				return false
 			}
 		}
 	}
