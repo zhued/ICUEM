@@ -18,6 +18,8 @@
 		4947EADA1A911FDC0092557B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4947EAD91A911FDC0092557B /* MapKit.framework */; };
 		49780C051AD4ECA2004166EA /* IMClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */; };
 		49780C071AD4F8E5004166EA /* IMClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49780C061AD4F8E5004166EA /* IMClassViewController.swift */; };
+		498A7EE21AEC14F10057AC7A /* GradientBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A7EE11AEC14F10057AC7A /* GradientBorderView.swift */; };
+		498A7EE41AEC2DF30057AC7A /* UIImage+AspectScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A7EE31AEC2DF30057AC7A /* UIImage+AspectScale.swift */; };
 		49C498481AC50F130036152D /* IMClassSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C498471AC50F130036152D /* IMClassSearchViewController.swift */; };
 		49DCD1C71AE7D1F400644637 /* IMClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCD1C61AE7D1F400644637 /* IMClass.swift */; };
 		49DCD1C91AE7D26300644637 /* IMRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCD1C81AE7D26300644637 /* IMRoom.swift */; };
@@ -66,6 +68,8 @@
 		4947EAD91A911FDC0092557B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassTableViewController.swift; sourceTree = "<group>"; };
 		49780C061AD4F8E5004166EA /* IMClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassViewController.swift; sourceTree = "<group>"; };
+		498A7EE11AEC14F10057AC7A /* GradientBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBorderView.swift; sourceTree = "<group>"; };
+		498A7EE31AEC2DF30057AC7A /* UIImage+AspectScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AspectScale.swift"; sourceTree = "<group>"; };
 		49C498471AC50F130036152D /* IMClassSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClassSearchViewController.swift; sourceTree = "<group>"; };
 		49DCD1C61AE7D1F400644637 /* IMClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMClass.swift; sourceTree = "<group>"; };
 		49DCD1C81AE7D26300644637 /* IMRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMRoom.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				49C498471AC50F130036152D /* IMClassSearchViewController.swift */,
 				49780C041AD4ECA2004166EA /* IMClassTableViewController.swift */,
 				49780C061AD4F8E5004166EA /* IMClassViewController.swift */,
+				498A7EE31AEC2DF30057AC7A /* UIImage+AspectScale.swift */,
+				498A7EE11AEC14F10057AC7A /* GradientBorderView.swift */,
 				4947EA921A9069820092557B /* Main.storyboard */,
 				49DCD1C61AE7D1F400644637 /* IMClass.swift */,
 				49DCD1CC1AE7EB5E00644637 /* IMClassCoordinator.swift */,
@@ -284,10 +290,12 @@
 			files = (
 				49780C051AD4ECA2004166EA /* IMClassTableViewController.swift in Sources */,
 				4947EA911A9069820092557B /* ViewController.swift in Sources */,
+				498A7EE41AEC2DF30057AC7A /* UIImage+AspectScale.swift in Sources */,
 				4947EA8C1A9069820092557B /* AppDelegate.swift in Sources */,
 				49DCD1CB1AE7D68800644637 /* IMRoomCoordinator.swift in Sources */,
 				49DCD1C91AE7D26300644637 /* IMRoom.swift in Sources */,
 				4947EAD61A90704B0092557B /* IMLevelControl.swift in Sources */,
+				498A7EE21AEC14F10057AC7A /* GradientBorderView.swift in Sources */,
 				49DCD1C71AE7D1F400644637 /* IMClass.swift in Sources */,
 				4947EA8F1A9069820092557B /* ICUEM.xcdatamodeld in Sources */,
 				49C498481AC50F130036152D /* IMClassSearchViewController.swift in Sources */,

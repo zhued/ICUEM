@@ -36,7 +36,9 @@ class IMClassSearchViewController: UIViewController,UITextFieldDelegate {
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "ShowResults" {
 			let destinationViewController = segue.destinationViewController as! IMClassTableViewController
-			destinationViewController.predicate = {return $0.room.wing == self.sectionField.text && $0.room.roomNumber == self.roomNumberField.text}
+			destinationViewController.predicate = {
+				return ($0.room.wing == self.sectionField.text && $0.room.roomNumber == self.roomNumberField.text) || $0.name == self.sectionField.text
+			}
 		}
 	}
 

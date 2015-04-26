@@ -13,6 +13,7 @@ class IMRoom: NSObject {
 	let wing:String
 	///Room Number
 	let roomNumber:String
+	let mapURL:NSURL
 	/**
 	Creates new IMRoom
 	
@@ -21,6 +22,10 @@ class IMRoom: NSObject {
 	init(json:[String:AnyObject]) {
 		wing = json["Wing"] as! String
 		roomNumber = json["RoomNum"] as! String
+		mapURL = NSURL(string: json["url"] as! String)!
 	}
-
+	
+	func toString() -> String {
+		return wing + " " + roomNumber
+	}
 }

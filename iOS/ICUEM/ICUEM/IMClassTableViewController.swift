@@ -38,7 +38,6 @@ class IMClassTableViewController: UITableViewController {
         // Configure the cell...
 		cell.textLabel?.text = filteredClasses[indexPath.row].name
 		cell.detailTextLabel?.text = "\(filteredClasses[indexPath.row].room.wing) \(filteredClasses[indexPath.row].room.roomNumber)"
-		
 
         return cell
     }
