@@ -11,3 +11,4 @@ xcuserdata/
 .env
 node_modules
 floor_plans
+.DS_Store
