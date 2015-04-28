@@ -5,14 +5,29 @@ Vision: An application for people to actually be able to navigate the Engineerin
 
 Team Members: Steven Tang, Edward Zhu, Andrew Arnopoulos, Brian Gaydon
 
-Motivation: Even after being students for a few years here, we still don’t know where things are in the EC. It would drastically reduce the time and stress of finding rooms for all occasions.
+# Navigation
+This repo contains 3 main parts: iOS project files, Android project files, and a Node.JS local server that connects with our MongoDB.
 
-To use the embedded MongoLab API:
+iOS project files can be found in the iOS/ICUEM folder.
+
+Android project files can be found in the android/MyApplication folder (although not fully implemented).
+
+Node.JS local API server can be found in the server/ folder and testing for this DB connection can be found in the test/ folder.
+
+#Want to see what our MongoDB looks like?
+
+Run(make sure you have basic mongo drivers installed):
+
+	mongo ds039950.mongolab.com:39950/icuem -u readonly -p readonly
+
+
+#To use the embedded Node.JS MongoLab API:
 
 
 ####Before you start
 
 Make sure you have a file named '.env' that contains the MongoLab API key and MongoLab DB connection verification.
+
 
 ####Init Server (npm)
 	
@@ -20,12 +35,12 @@ Make sure you have a file named '.env' that contains the MongoLab API key and Mo
 
 	npm start
 
-##To Test!
+##To Test the DB connection!
 
 	npm test
 
 
-##What You Can Do! (More will be added later)
+##What You Can Do!
 
 #### Get COUNT of database entries
 	
@@ -72,3 +87,15 @@ Make sure you have a file named '.env' that contains the MongoLab API key and Mo
 	curl http://localhost:3000/room/add
 
 	curl http://localhost:3000/class/add
+
+
+#To compile our app before it hits the App Store:
+
+  - Download XCode from Mac App store.
+  - Clone or Download these Project files from the folder iOS/ICUEM
+  - On XCode:
+    - Control-Click on empty space
+    - Choose Add Files to “<Workspace_Name>”
+    - Select the .xcodeproj file and click Add.
+  - Then start up an emulator and the node DB connection server and watch the app work!
+
